@@ -403,6 +403,7 @@ const Particle = () => {
             speed: 3,
             mix: true,
             effectClose: true,
+            pauseOnStop: true,
             anim: {
               enable: true,
               speed: 5, // Aumenta a suavidade da diminuição
@@ -451,7 +452,7 @@ const Particle = () => {
           straight: false
         },
         number: {
-          value: 115,
+          value: 150,
           density: {
             enable: true,
             area: 800

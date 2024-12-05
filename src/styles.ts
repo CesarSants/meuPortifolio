@@ -68,11 +68,14 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin-top: 16px;
+  padding-top: 8px;
+  /* background-color: rgba(0, 0, 0, 1); */
 
   .logo {
-    z-index: 98;
-    margin-left: 20px;
+    z-index: 97;
+    margin-left: 15px;
+    margin-top: 12px;
+    /* margin-top e left: 20px; total */
   }
 
   .menu {
@@ -82,7 +85,7 @@ export const Header = styled.header`
     /* z-index: 100; */
     z-index: 101;
     position: fixed;
-    right: 20px;
+    right: 15px;
   }
 
   .hamburger {
@@ -167,7 +170,8 @@ export const Header = styled.header`
     gap: 4rem;
     transition: opacity 0.5s ease-in-out;
     position: absolute;
-    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-top: 32px;
   }
 
   .nav-menu a {
@@ -181,7 +185,7 @@ export const Header = styled.header`
     transform: translateY(-20px);
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     &:last-child {
-      /* padding-bottom: 2rem; */
+      padding-bottom: 16px;
     }
   }
 
@@ -228,18 +232,24 @@ export const Header = styled.header`
     transform: translateY(-100%);
   }
 
-  .chevron-down {
+  .chevron-down,
+  .chevron-up {
     display: block;
     position: fixed;
     bottom: 55vh;
     left: 85vw;
     transform: translateX(-50%);
     transition: opacity 0.4s ease-out;
-    /* opacity: 0; */
+    opacity: 0;
     user-select: none;
   }
-  .chevron-down img {
+  .chevron-down img,
+  .chevron-up img {
     width: 32px;
+  }
+
+  .chevron-up {
+    bottom: 85vh;
   }
 
   @keyframes bounce {
@@ -346,6 +356,11 @@ export const Inicio = styled.main`
     span {
       color: #3e79f7;
       font-weight: bold;
+
+      @media (max-width: 800px) {
+        display: block;
+        min-height: 56px;
+      }
     }
   }
 

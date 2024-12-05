@@ -45,7 +45,7 @@ const ChevronComponent = () => {
   }, [])
 
   return (
-    <div className="chevron-down" style={{ opacity: 0 }}>
+    <div className="chevron-down">
       <img src={scrollDown} alt="" />
     </div>
   )

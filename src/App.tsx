@@ -4,10 +4,11 @@ import { Container, GlobalCss, Header, HeaderContainer, Inicio } from './styles'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import ChevronComponent from './utils/chevronComponent'
-import Particles from './components/Particle'
+import Particles from './utils/Particle'
 import topsombra from './assets/images/top-sombra-execao.png'
 import topLogo from './assets/images/top-nome3.png'
 import AnimatedText from './utils/AnimatedText'
+import ChevronComponentUp from './utils/chevronComponentUp'
 
 function App() {
   useEffect(() => {
@@ -80,6 +81,7 @@ function App() {
           <div className="menuAbertoContainer">
             <div className={`menu-aberto ${isMenuOpen ? 'active' : ''}`}>
               <ChevronComponent />
+              <ChevronComponentUp />
               <nav className="nav-menu">
                 <a href="#inicio">INÍCIO</a>
                 <a href="#sobre">SOBRE</a>
