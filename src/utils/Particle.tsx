@@ -330,7 +330,7 @@
 //////////////////////////////////////////////////////////////////////
 
 //bubbles
-
+import fundo from '../../assets/backGrounds/cinza-19.webp'
 import { useEffect, useMemo, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { Opacity, tsParticles } from '@tsparticles/engine'
@@ -341,11 +341,11 @@ import {
   MoveDirection,
   OutMode
 } from '@tsparticles/engine'
-// import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+// import { loadAll } from '@tsparticles/all' // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
+import { loadFull } from 'tsparticles' // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from '@tsparticles/slim' // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 import { FadeLoader } from 'react-spinners'
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+import { loadBasic } from '@tsparticles/basic' // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 const Particle = () => {
   const [init, setInit] = useState(false)
@@ -357,10 +357,10 @@ const Particle = () => {
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
       // starting from v2 you can add only the features you need reducing the bundle size
       // await loadAll(engine)
-      //await loadFull(engine);
+      await loadFull(engine)
       await loadSlim(engine)
       await loadBubbleEffect(tsParticles)
-      //await loadBasic(engine);
+      await loadBasic(engine)
     }).then(() => {
       setInit(true)
     })
@@ -373,6 +373,10 @@ const Particle = () => {
   const options: ISourceOptions = useMemo(
     () => ({
       background: {
+        // image: 'url(https://fake-api-khaki.vercel.app/img/css.png)', // Ajuste aqui se necessário
+        // position: 'center',
+        // repeat: 'no-repeat',
+        // size: 'cover',
         color: {
           value: '#21051c'
           // value: '#ded1f5'
@@ -401,15 +405,15 @@ const Particle = () => {
             size: 40,
             opacity: 0.6,
             speed: 3,
-            mix: true,
-            effectClose: true,
-            pauseOnStop: true,
+            // mix: false,
+            // effectClose: true,
+            // pauseOnStop: true,
             anim: {
               enable: true,
-              speed: 5, // Aumenta a suavidade da diminuição
+              speed: 10, // Aumenta a suavidade da diminuição
               size: 8, // Ajusta a suavidade no tamanho
-              opacity: 0.4, // Ajusta a suavidade da opacidade
-              sync: true
+              opacity: 0.4 // Ajusta a suavidade da opacidade
+              // sync: true
             }
           },
           push: {
@@ -438,7 +442,7 @@ const Particle = () => {
           color: '#d32323',
           distance: 200,
           enable: true,
-          opacity: 0.3,
+          opacity: 0.6,
           width: 1.6
         },
         move: {
@@ -466,57 +470,57 @@ const Particle = () => {
           options: {
             image: [
               {
-                src: 'https://fake-api-khaki.vercel.app/img/css.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/css.png',
                 width: 100,
                 height: 100
               },
               {
-                src: 'https://fake-api-khaki.vercel.app/img/git.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/git.png',
                 width: 100,
                 height: 100
               },
               {
-                src: 'https://fake-api-khaki.vercel.app/img/github.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/github.png',
                 width: 100,
                 height: 100
               },
               {
-                src: 'https://fake-api-khaki.vercel.app/img/html.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/html.png',
                 width: 100,
                 height: 100
               },
               {
-                src: 'https://fake-api-khaki.vercel.app/img/javascript.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/javascript.png',
                 width: 100,
                 height: 100
               },
               {
-                src: 'https://fake-api-khaki.vercel.app/img/react.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/react.png',
                 width: 100,
                 height: 100
               },
               {
-                src: 'https://fake-api-khaki.vercel.app/img/redux.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/redux.png',
                 width: 100,
                 height: 100
               },
               {
-                src: 'https://fake-api-khaki.vercel.app/img/td.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/td.png',
                 width: 100,
                 height: 100
               },
               {
-                src: 'https://fake-api-khaki.vercel.app/img/vite.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/vite.png',
                 width: 100,
                 height: 100
               },
               {
-                src: 'https://fake-api-khaki.vercel.app/img/vscode.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/vscode.png',
                 width: 100,
                 height: 100
               },
               {
-                src: 'https://fake-api-khaki.vercel.app/img/vue.png', // Substitua por sua URL
+                src: 'https://fake-api-khaki.vercel.app/img/vue.png',
                 width: 100,
                 height: 100
               }
@@ -534,11 +538,13 @@ const Particle = () => {
 
   if (init) {
     return (
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />
+      <div className="particlesContainer">
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={options}
+        />
+      </div>
     )
   }
   return <></>

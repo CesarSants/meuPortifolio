@@ -26,9 +26,20 @@ const ChevronComponentUp = () => {
     }
     setInitialVisibility()
 
+    const handleClick = () => {
+      if (menuContainer) {
+        menuContainer.scrollTo({
+          top: menuContainer.scrollTop - menuContainer.clientHeight,
+          behavior: 'smooth'
+        })
+      }
+    }
+
+    chevron?.addEventListener('click', handleClick)
     menuContainer?.addEventListener('scroll', handleScroll)
 
     return () => {
+      chevron?.removeEventListener('click', handleClick)
       menuContainer?.removeEventListener('scroll', handleScroll)
     }
   }, [])

@@ -36,10 +36,21 @@ const ChevronComponent = () => {
       }
     }
 
+    const handleClick = () => {
+      if (menuContainer) {
+        menuContainer.scrollTo({
+          top: menuContainer.clientHeight * 1,
+          behavior: 'smooth'
+        })
+      }
+    }
+
+    chevron?.addEventListener('click', handleClick)
     menuContainer?.addEventListener('scroll', handleScroll)
 
     return () => {
       clearTimeout(timer)
+      chevron?.removeEventListener('click', handleClick)
       menuContainer?.removeEventListener('scroll', handleScroll)
     }
   }, [])
