@@ -40,8 +40,6 @@ const App = () => {
       <Container>
         <Home />
         <About />
-        <About />
-        <About />
       </Container>
     </>
   )

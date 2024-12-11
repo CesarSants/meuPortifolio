@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { cores, fonts } from '../styles'
 
 const HeadlineWrapper = styled.div`
-  height: 43%;
+  height: 20%;
   /* height: 30%; */
   width: 100vw;
   overflow: hidden;

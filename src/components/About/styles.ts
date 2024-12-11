@@ -41,7 +41,7 @@ import fundo from '../../assets/backGrounds/roxo-6.jpg'
 
 export const Container = styled.div`
   /* height: 200vh; */
-  height: 100vh;
+  /* height: 100vh; */
   overflow: hidden;
   position: relative;
   opacity: 1;
@@ -105,7 +105,7 @@ export const Container = styled.div`
   }
 
   .aboutContainer {
-    /* height: 100vh; */
+    height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -184,5 +184,69 @@ export const Container = styled.div`
     to {
       transform: rotate(0deg);
     }
+  }
+  .aboutContainer2 {
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: -120px;
+    margin-bottom: -40px;
+  }
+
+  .container2 {
+    padding-top: 70px;
+
+    h3 {
+      text-align: center;
+      font-size: 60px;
+      font-family: ${fonts.fontGrande};
+    }
+  }
+
+  .aboutContainer1 {
+    padding-bottom: 20px;
+  }
+
+  .tec {
+    width: 580px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .grid-item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transition: transform 1s ease;
+  }
+
+  .grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 1s ease;
+  }
+
+  .grid-item img.dark {
+    opacity: 1;
+  }
+
+  .grid-item:hover img.dark {
+    opacity: 1;
+  }
+
+  .grid-item:hover img.normal {
+    opacity: 0;
+  }
+
+  .grid-item:hover {
+    transform: scale(1.2);
   }
 `

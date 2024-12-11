@@ -52,7 +52,20 @@ const Header: React.FC = () => {
   }
 
   useEffect(() => {
-    const heroSection = document.querySelector('.sobre') as HTMLElement
+    // const heroSection = document.querySelector('.sobre') as HTMLElement
+    // const alturaHero = heroSection.clientHeight
+
+    // const handleScroll = () => {
+    //   const posicaoAtual = window.scrollY
+
+    //   if (posicaoAtual > alturaHero) {
+    //     setIsHeaderVisible(true)
+    //   } else {
+    //     setIsHeaderVisible(false)
+    //   }
+    // }
+
+    const heroSection = document.querySelector('.inicio') as HTMLElement
     const alturaHero = heroSection.clientHeight
 
     const handleScroll = () => {
