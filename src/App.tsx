@@ -7,6 +7,7 @@ import Header from './components/Header'
 import Home from './components/Home'
 import About from './components/About'
 import Particles from './utils/Particle'
+import Projects from './components/Projects'
 
 const App = () => {
   // const [isVisible, setIsVisible] = useState(false)
@@ -39,6 +40,8 @@ const App = () => {
       <Header />
       <Container>
         <Home />
+        <About />
+        <Projects />
         <About />
       </Container>
     </>

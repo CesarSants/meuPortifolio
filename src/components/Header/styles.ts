@@ -176,7 +176,7 @@ export const Head = styled.header`
   }
 
   .nav-menu a:hover {
-    color: ${cores.amarelo};
+    color: #2bacbd;
     transition: all 0.9s ease;
   }
   .overlay {

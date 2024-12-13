@@ -3,8 +3,13 @@ import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { cores, fonts } from '../styles'
 
-const HeadlineWrapper = styled.div`
-  height: 20%;
+type Props = {
+  content: string
+  height?: string
+}
+
+const HeadlineWrapper = styled.div<{ height: string }>`
+  height: ${(props) => props.height};
   /* height: 30%; */
   width: 100vw;
   overflow: hidden;
@@ -53,10 +58,14 @@ const HeadlineWrapper = styled.div`
   .headline-scroll .light {
     font-weight: lighter;
     color: ${cores.cinza};
+    color: #2bacbd90;
+    /* color: #3e79f783; */
+
+    color: #b37da7;
   }
 `
 
-const HeadlineScroll: React.FC = () => {
+const HeadlineScroll: React.FC<Props> = ({ content, height = '20%' }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -75,33 +84,35 @@ const HeadlineScroll: React.FC = () => {
   return (
     <HeadlineWrapper
       ref={scrollContainerRef}
+      height={height}
       data-aos="fade-up"
+      data-aos-delay="300"
       data-aos-duration="1000"
     >
       <div id="headline-scroll" className="headline-scroll">
-        <span className="bold">SOBRE</span>
+        <span className="bold">{content}</span>
         <span className="divisor"></span>
-        <span className="light">SOBRE</span>
+        <span className="light">{content}</span>
         <span className="divisor"></span>
-        <span className="bold">SOBRE</span>
+        <span className="bold">{content}</span>
         <span className="divisor"></span>
-        <span className="light">SOBRE</span>
+        <span className="light">{content}</span>
         <span className="divisor"></span>
-        <span className="bold">SOBRE</span>
+        <span className="bold">{content}</span>
         <span className="divisor"></span>
-        <span className="light">SOBRE</span>
+        <span className="light">{content}</span>
         <span className="divisor"></span>
-        <span className="bold">SOBRE</span>
+        <span className="bold">{content}</span>
         <span className="divisor"></span>
-        <span className="light">SOBRE</span>
+        <span className="light">{content}</span>
         <span className="divisor"></span>
-        <span className="bold">SOBRE</span>
+        <span className="bold">{content}</span>
         <span className="divisor"></span>
-        <span className="light">SOBRE</span>
+        <span className="light">{content}</span>
         <span className="divisor"></span>
-        <span className="bold">SOBRE</span>
+        <span className="bold">{content}</span>
         <span className="divisor"></span>
-        <span className="light">SOBRE</span>
+        <span className="light">{content}</span>
         <span className="divisor"></span>
       </div>
     </HeadlineWrapper>

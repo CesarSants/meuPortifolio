@@ -1,4 +1,4 @@
-import HeadlineScroll from '../../utils/SlideSobre'
+import HeadlineScroll from '../../utils/SlideTitle'
 import { Container } from './styles'
 import fundo from '../../assets/backGrounds/cinza-19.webp'
 import { fonts } from '../../styles'
@@ -52,7 +52,7 @@ const About = () => {
         <img src={fundo} alt="" />
       </div>
       <div className="cont">
-        <HeadlineScroll />
+        <HeadlineScroll content="sobre" />
       </div>
       <div
         className="aboutContainer"
@@ -272,7 +272,7 @@ const About = () => {
                   <div
                     className="grid-item"
                     key={index}
-                    // data-aos="fade-up"
+                    data-aos="fade-up"
                     // data-aos-duration="1000"
                     // data-aos-delay={(index + 1) * 50}
                   >

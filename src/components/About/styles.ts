@@ -221,7 +221,7 @@ export const Container = styled.div`
     position: relative;
     width: 100px;
     height: 100px;
-    transition: transform 1s ease;
+    /* transition: transform 1s ease; */
   }
 
   .grid-item img {

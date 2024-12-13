@@ -45,6 +45,7 @@ export const Container = styled.main`
     }
     span {
       color: #3e79f7;
+      /* color: #2bacbd; */
       font-weight: bold;
 
       @media (max-width: 800px) {
