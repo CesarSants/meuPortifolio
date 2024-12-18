@@ -58,8 +58,9 @@ const HeadlineWrapper = styled.div<{ height: string }>`
   .headline-scroll .light {
     font-weight: lighter;
     color: ${cores.cinza};
-    color: #2bacbd90;
+    /* color: #2bacbd90; */
     /* color: #3e79f783; */
+    /* color: #58174a81; */
 
     color: #b37da7;
   }
