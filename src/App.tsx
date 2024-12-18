@@ -8,6 +8,8 @@ import Home from './components/Home'
 import About from './components/About'
 import Particles from './utils/Particle'
 import Projects from './components/Projects'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 const App = () => {
   // const [isVisible, setIsVisible] = useState(false)
@@ -34,7 +36,7 @@ const App = () => {
   // }, [])
 
   return (
-    <>
+    <Provider store={store}>
       <GlobalCss />
       <Particles />
       <Header />
@@ -44,7 +46,7 @@ const App = () => {
         <Projects />
         <About />
       </Container>
-    </>
+    </Provider>
   )
 }
 

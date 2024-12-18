@@ -1,174 +1,3 @@
-// import { useEffect, useRef, useState } from 'react'
-// import HeadlineScroll from '../../utils/SlideTitle'
-// import { Container } from './styles'
-// import fundo from '../../assets/backGrounds/cinza-11.jpg'
-// import Slider, { Settings } from 'react-slick'
-// import 'slick-carousel/slick/slick.css'
-// import 'slick-carousel/slick/slick-theme.css'
-// import foto from '../../assets/images/scroll-icon.png'
-
-// const Projects: React.FC = () => {
-//   const [menu, setMenu] = useState('site')
-//   const [activeButton, setActiveButton] = useState('site')
-//   const contentWrapperRef = useRef<HTMLDivElement>(null)
-//   const sliderRef = useRef<Slider>(null)
-
-//   const handleButtonClick = (menuName: 'site' | 'tools') => {
-//     setMenu(menuName)
-//     setActiveButton(menuName)
-//     // if (contentWrapperRef.current) {
-//     //   contentWrapperRef.current.scrollIntoView({ behavior: 'smooth' })
-//     // }
-//     if (contentWrapperRef.current) {
-//       const element = contentWrapperRef.current.getBoundingClientRect()
-//       const scrollPosition = window.scrollY + element.top + 60
-//       window.scrollTo({
-//         top: scrollPosition,
-//         behavior: 'smooth'
-//       })
-//     }
-//   }
-
-//   const settings: Settings = {
-//     dots: true,
-//     infinite: true,
-//     speed: 0,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     // autoplay: true,
-//     // autoplaySpeed: 5000,
-//     arrows: true
-//   }
-
-//   useEffect(() => {
-//     if (sliderRef.current) {
-//       sliderRef.current.slickGoTo(0) // Ir para o primeiro slide ao mudar o menu
-//       sliderRef.current.slickPause() // Pausar o autoplay
-//       setTimeout(() => sliderRef.current?.slickPlay(), 100) // Reativar o autoplay após um pequeno tempo
-//     }
-//   }, [menu])
-
-//   // useEffect(() => {
-//   //   if (sliderRef.current) {
-//   //     sliderRef.current.slickGoTo(0)
-//   //   }
-//   // }, [menu])
-
-//   // useEffect(() => {
-//   //   if (sliderRef.current) {
-//   //     sliderRef.current.slickGoTo(0)
-//   //     sliderRef.current.slickPause() // Pause o autoplay (se habilitado) e reinicie após um tempo
-//   //     setTimeout(() => sliderRef.current?.slickPlay(), 100)
-//   //   }
-//   // }, [])
-
-//   // useEffect(() => {
-//   //   const timeout = setTimeout(() => {
-//   //     if (sliderRef.current) {
-//   //       sliderRef.current.slickGoTo(0)
-//   //     }
-//   //   }, 100)
-
-//   //   return () => clearTimeout(timeout)
-//   // }, [menu])
-
-//   return (
-//     <Container>
-//       <HeadlineScroll content="projetos" height="25%" />
-//       <div className="content-wrapper" ref={contentWrapperRef}>
-//         <aside
-//           className="aside"
-//           data-aos="fade-right"
-//           data-aos-duration="3000"
-//           data-aos-delay="200"
-//         >
-//           <nav className="nav-tipos">
-//             <ul>
-//               <li>
-//                 <button
-//                   className={activeButton === 'site' ? 'isActive' : ''}
-//                   onClick={() => handleButtonClick('site')}
-//                 >
-//                   Websites
-//                 </button>
-//               </li>
-//               <li>
-//                 <button
-//                   className={activeButton === 'tools' ? 'isActive' : ''}
-//                   onClick={() => handleButtonClick('tools')}
-//                 >
-//                   Ferramentas
-//                 </button>
-//               </li>
-//             </ul>
-//           </nav>
-//         </aside>
-//         <div
-//           className="content"
-//           data-aos="fade-up"
-//           data-aos-delay="300"
-//           data-aos-duration="1000"
-//         >
-//           <nav className="nav-tipos nav-tipos2">
-//             <ul>
-//               <li>
-//                 <button
-//                   className={activeButton === 'site' ? 'isActive' : ''}
-//                   onClick={() => handleButtonClick('site')}
-//                 >
-//                   Websites
-//                 </button>
-//               </li>
-//               <li>
-//                 <button
-//                   className={activeButton === 'tools' ? 'isActive' : ''}
-//                   onClick={() => handleButtonClick('tools')}
-//                 >
-//                   Ferramentas
-//                 </button>
-//               </li>
-//             </ul>
-//           </nav>
-//           <div className="background">
-//             <img src={fundo} alt="" />
-//           </div>
-//           <div className="contentEncaps">
-//             {menu === 'site' && (
-//               <div className="contentPrincipal1">
-//                 <Slider className="slider" ref={sliderRef} {...settings}>
-//                   <div className="card">
-//                     <img src={foto} alt="" />
-//                     <p>
-//                       Lorem ipsum dolor sit,Lorem ipsum, dolor sit amet
-//                       consectetur adipisicing elit. Omnis ea voluptate qui, quia
-//                       nesciunt accusantium. Temporibus ve
-//                     </p>
-//                     <a href="#">acesse aqui</a>
-//                   </div>
-//                   <div className="card">
-//                     <img src={foto} alt="" />
-//                     <p>
-//                       Lorem ipsum dolor sit,Lorem ipsum, dolor sit amet
-//                       consectetur adipisicing elit. Omnis ea voluptate qui, quia
-//                       nesciunt accusantium. Temporibus ve
-//                     </p>
-//                     <a href="#">acesse aqui</a>
-//                   </div>
-//                 </Slider>
-//               </div>
-//             )}
-//             {menu === 'tools' && (
-//               <div className="contentPrincipal2">ola mundo 2</div>
-//             )}
-//           </div>
-//         </div>
-//       </div>
-//     </Container>
-//   )
-// }
-
-// export default Projects
-
 import { useEffect, useRef, useState } from 'react'
 import HeadlineScroll from '../../utils/SlideTitle'
 import { Container } from './styles'
@@ -178,7 +7,13 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import foto2 from '../../assets/images/starwars3.png'
 import foto1 from '../../assets/images/starwars1.png'
+import { useGetToolsQuery, useGetWebsitesQuery } from '../../services/api'
 
+// type Props = {
+//   projects: Projeto[]
+// }
+
+// const Projects: React.FC<Props> = ({ projects }) => {
 const Projects: React.FC = () => {
   const [menu, setMenu] = useState('site')
   const [activeButton, setActiveButton] = useState('site')
@@ -192,6 +27,9 @@ const Projects: React.FC = () => {
   // const [showSlider, setShowSlider] = useState(true)
   // const [imageWidth, setImageWidth] = useState<SliderState['imageWidth']>(390)
   // const sliderRef = useRef<Slider>(null)
+
+  const { data: tool, isLoading: isLoadingTool } = useGetToolsQuery()
+  const { data: web, isLoading: isLoadingWeb } = useGetWebsitesQuery()
 
   const handleButtonClick = (menuName: 'site' | 'tools') => {
     setMenu(menuName)
@@ -301,22 +139,30 @@ const Projects: React.FC = () => {
     arrows: false
   })
 
-  const settingsImg: Settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    useCSS: true,
-    // fade: true,
-    // draggable: false,
-    // centerPadding: 20,
-    // centerMode: true,
-    // autoplay: true,
-    // autoplaySpeed: 5000,
-    arrows: true,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />
+  // const settingsImg: Settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   useCSS: true,
+  //   arrows: true,
+  //   prevArrow: <CustomPrevArrow />,
+  //   nextArrow: <CustomNextArrow />
+  // }
+
+  const settingsImg = (imageCount: number): Settings => {
+    return {
+      dots: false,
+      infinite: imageCount > 1,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      useCSS: true,
+      arrows: imageCount > 1,
+      prevArrow: imageCount > 1 ? <CustomPrevArrow /> : undefined,
+      nextArrow: imageCount > 1 ? <CustomNextArrow /> : undefined
+    }
   }
 
   //original sem fade
@@ -446,255 +292,129 @@ const Projects: React.FC = () => {
               // >
                 {/* <Slider className="slider" ref={sliderRef} {...settings}> */}
                 <Slider className="slider" {...settings}>
-                  <div className="cardContainer cardContainer1" key="1">
+                  {web?.map((project) => (
                     <div
-                      className="card"
-                      data-aos="fade-up"
-                      data-aos-delay="400"
-                      data-aos-duration="1000"
+                      className="cardContainer cardContainer1"
+                      key={project.id}
                     >
                       <div
-                        className="sliderImgContainer"
-                        onMouseDown={(e: React.MouseEvent) =>
-                          e.stopPropagation()
-                        }
-                        onTouchStart={(e: React.TouchEvent) =>
-                          e.stopPropagation()
-                        }
+                        className="card"
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                        data-aos-duration="1000"
                       >
-                        <Slider className="slider2" {...settingsImg}>
-                          <div className="imgContainer">
-                            <img
-                              src={foto1}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div className="imgContainer">
-                            <img
-                              src={foto2}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div className="imgContainer">
-                            <img
-                              src={foto1}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div className="imgContainer">
-                            <img
-                              src={foto2}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                        </Slider>
+                        <div
+                          className="sliderImgContainer"
+                          onMouseDown={(e: React.MouseEvent) =>
+                            e.stopPropagation()
+                          }
+                          onTouchStart={(e: React.TouchEvent) =>
+                            e.stopPropagation()
+                          }
+                        >
+                          <Slider
+                            className="slider2"
+                            {...settingsImg(project.gallery.length)}
+                          >
+                            {project.gallery.map((image, index) => (
+                              <div className="imgContainer" key={index}>
+                                <img
+                                  src={image.url}
+                                  alt={`Imagem ${index + 1} do projeto ${
+                                    project.id
+                                  }`}
+                                  style={{ maxWidth: imageWidth }}
+                                />
+                              </div>
+                            ))}
+                          </Slider>
+                        </div>
+                        <p>{project.descricao}</p>
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          className="cta"
+                          rel="noreferrer"
+                        >
+                          <span>Visite o Site</span>
+                          <svg width="15px" height="10px" viewBox="0 0 13 10">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                          </svg>
+                        </a>
                       </div>
-                      <p>
-                        1 Lorem ipsum dolor sit,Lorem ipsum, dolor sit amet
-                        consectetur adipisicing elit. Omnis ea voluptate qui,
-                        quia nesciunt accusantium. Temporibus ve
-                      </p>
-                      <button className="cta">
-                        <span>Visite o Site</span>
-                        <svg width="15px" height="10px" viewBox="0 0 13 10">
-                          <path d="M1,5 L11,5"></path>
-                          <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                      </button>
                     </div>
-                  </div>
-                  <div className="cardContainer cardContainer2" key="2">
-                    <div
-                      className="card"
-                      data-aos="fade-up"
-                      data-aos-delay="400"
-                      data-aos-duration="1000"
-                    >
-                      <div
-                        className="sliderImgContainer"
-                        onMouseDown={(e: React.MouseEvent) =>
-                          e.stopPropagation()
-                        }
-                        onTouchStart={(e: React.TouchEvent) =>
-                          e.stopPropagation()
-                        }
-                      >
-                        <Slider className="slider2" {...settingsImg}>
-                          <div className="imgContainer">
-                            <img
-                              src={foto1}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div className="imgContainer">
-                            <img
-                              src={foto2}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div className="imgContainer">
-                            <img
-                              src={foto1}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div className="imgContainer">
-                            <img
-                              src={foto2}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                        </Slider>
-                      </div>
-                      <p>
-                        2 Lorem ipsum dolor sit,Lorem ipsum, dolor sit amet
-                        consectetur adipisicing elit. Omnis ea voluptate qui,
-                        quia nesciunt accusantium. Temporibus ve
-                      </p>
-                      <button className="cta">
-                        <span>Visite o Site</span>
-                        <svg width="15px" height="10px" viewBox="0 0 13 10">
-                          <path d="M1,5 L11,5"></path>
-                          <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="cardContainer cardContainer1" key="3">
-                    <div
-                      className="card"
-                      data-aos="fade-up"
-                      data-aos-delay="400"
-                      data-aos-duration="1000"
-                    >
-                      <div
-                        className="sliderImgContainer"
-                        onMouseDown={(e: React.MouseEvent) =>
-                          e.stopPropagation()
-                        }
-                        onTouchStart={(e: React.TouchEvent) =>
-                          e.stopPropagation()
-                        }
-                      >
-                        <Slider className="slider2" {...settingsImg}>
-                          <div className="imgContainer">
-                            <img
-                              src={foto1}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div className="imgContainer">
-                            <img
-                              src={foto2}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div className="imgContainer">
-                            <img
-                              src={foto1}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div className="imgContainer">
-                            <img
-                              src={foto2}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                        </Slider>
-                      </div>
-                      <p>
-                        3 Lorem ipsum dolor sit,Lorem ipsum, dolor sit amet
-                        consectetur adipisicing elit. Omnis ea voluptate qui,
-                        quia nesciunt accusantium. Temporibus ve
-                      </p>
-                      <button className="cta">
-                        <span>Visite o Site</span>
-                        <svg width="15px" height="10px" viewBox="0 0 13 10">
-                          <path d="M1,5 L11,5"></path>
-                          <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="cardContainer cardContainer2" key="4">
-                    <div
-                      className="card"
-                      data-aos="fade-up"
-                      data-aos-delay="400"
-                      data-aos-duration="1000"
-                    >
-                      <div
-                        className="sliderImgContainer"
-                        onMouseDown={(e: React.MouseEvent) =>
-                          e.stopPropagation()
-                        }
-                        onTouchStart={(e: React.TouchEvent) =>
-                          e.stopPropagation()
-                        }
-                      >
-                        <Slider className="slider2" {...settingsImg}>
-                          <div>
-                            <img
-                              src={foto1}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={foto2}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={foto1}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={foto2}
-                              alt=""
-                              style={{ maxWidth: imageWidth }}
-                            />
-                          </div>
-                        </Slider>
-                      </div>
-                      <p>
-                        4 1sds2323Lorem ipsum dolor sit,Lorem ipsum, dolor sit
-                        amet consectetur adipisicing elit. Omnis ea voluptate
-                        qui, quia nesciunt accusantium. Temporibus ve
-                      </p>
-                      <button className="cta">
-                        <span>Visite o Site</span>
-                        <svg width="15px" height="10px" viewBox="0 0 13 10">
-                          <path d="M1,5 L11,5"></path>
-                          <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
+                  ))}
                 </Slider>
               </div>
             )}
             {menu === 'tools' && (
-              <div className="contentPrincipal2">ola mundo 2</div>
+              <div
+                className="contentPrincipal1"
+                data-aos="fade-up"
+                data-aos-delay="400"
+                data-aos-duration="1000"
+              >
+                <Slider className="slider" {...settings}>
+                  {tool?.map((project) => (
+                    <div
+                      className="cardContainer cardContainer1"
+                      key={project.id}
+                    >
+                      <div
+                        className="card"
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                        data-aos-duration="1000"
+                      >
+                        <div
+                          className="sliderImgContainer"
+                          onMouseDown={(e: React.MouseEvent) =>
+                            e.stopPropagation()
+                          }
+                          onTouchStart={(e: React.TouchEvent) =>
+                            e.stopPropagation()
+                          }
+                        >
+                          <Slider
+                            className="slider2"
+                            // {...{
+                            //   ...settingsImg,
+                            //   infinite: project.gallery.length > 1
+                            // }}
+                            {...settingsImg(project.gallery.length)}
+                          >
+                            {project.gallery.map((image, index) => (
+                              <div className="imgContainer" key={index}>
+                                <img
+                                  src={image.url}
+                                  alt={`Imagem ${index + 1} do projeto ${
+                                    project.id
+                                  }`}
+                                  style={{ maxWidth: imageWidth }}
+                                />
+                              </div>
+                            ))}
+                          </Slider>
+                        </div>
+                        <p>{project.descricao}</p>
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          className="cta"
+                          rel="noreferrer"
+                        >
+                          <span>Visite o Site</span>
+                          <svg width="15px" height="10px" viewBox="0 0 13 10">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </Slider>
+              </div>
             )}
           </div>
           <button

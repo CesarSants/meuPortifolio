@@ -159,6 +159,7 @@ export const Container = styled.div`
     border: none;
     background: none;
     cursor: pointer;
+    text-decoration: none;
   }
 
   .cta span {
